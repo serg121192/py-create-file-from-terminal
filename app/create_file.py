@@ -32,7 +32,7 @@ def getting_current_dir_and_check_file_existence() -> None:
         os.makedirs(os.path.join(*dirs), exist_ok=True)
         file_name = os.path.join(*dirs, file_name)
     else:
-        file_name = os.getcwd() + file_name
+        file_name = os.path.join(os.getcwd(), file_name)
 
     mode = "a+" if os.path.exists(file_name) else "w"
     content = get_timestamp_of_current_date_and_time() + "\n"
